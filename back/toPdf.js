@@ -2,13 +2,11 @@
 
 const { readFileSync } = require('fs');
 const puppeteer = require('puppeteer');
-const path = require('path');
 
 const toPdfData = async (items) => {
-    const browser = await puppeteer.launch();
+    console.log('Generando PDF...')
+    const browser = await puppeteer.launch({ headless: false, defaultViewport: null, });
     const page = await browser.newPage();
-
-    const currentDirectory = process.cwd();
 
     let dataFormatted = ``
 
@@ -25,7 +23,6 @@ const toPdfData = async (items) => {
             </article>
         `
     });
-
 
     const htmlContent = `
     <!DOCTYPE html>
@@ -59,13 +56,9 @@ const toPdfData = async (items) => {
         
     </body>
     </html>`;
-
-    console.log(htmlContent)
     await page.setContent(htmlContent);
-
-    await page.pdf({ path: 'output.pdf', format: 'A4' });
-
-    await browser.close();
+    await page.pdf({ path: 'datos.pdf', format: 'A4' });
+   
 }
 
 module.exports = toPdfData

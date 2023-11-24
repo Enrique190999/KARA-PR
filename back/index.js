@@ -21,13 +21,12 @@ async function autoScroll(page) {
 }
 
 const cleanFileName = (text) => {
-    // Reemplazar caracteres no permitidos en nombres de archivo
     return text.replace(/[\/\?<>\\:\*\|":]/g, '_');
 };
 
+
 const EPPDATA = async () => {
-    console.log('ESTOY DENTRO')
-    // CAMBIAR EL HEADLESS A NEW
+    console.log('Recopilando datos...')
     const browser = await puppeteer.launch({ headless: false, defaultViewport: null, });
     const page = await browser.newPage();
     await page.goto(`https://www.epdata.es/datos/datos-graficos-estadisticas-municipio/52/burgos/1795`);
@@ -57,20 +56,17 @@ const EPPDATA = async () => {
             img: `imagen_${index}.png`
         }
         result.push(obj)
-        /*  for (const svgItem of svg){
-            
-         } */
-
-         console.log(result)
-
-         toPdfData(result)
 
     }
 
+    toPdfData(result)
+    console.log('PDF generado correctamente.')
 
-    // return result;
+    await browser.close()
+
 };
+
+
 
 EPPDATA()
 
-// toPdfData(await EPPDATA());
