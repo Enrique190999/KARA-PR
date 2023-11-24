@@ -69,7 +69,7 @@ Documentar el proceso completo, incluyendo el código fuente del scraper, los m�
 
 Al seguir estos pasos, se espera lograr el objetivo de obtener datos estadísticos, exportarlos a un documento PDF y crear una presentación automatizada utilizando inteligencia artificial, todo dentro de un entorno de desarrollo integrado compatible.
 
-### Reparto de tareas
+## Reparto de tareas
 Segun vayamos iniciando el proyecto cada persona debe modificar este *README* y modificar esta tabla indicando la tarea o tareas que se ha asignado. 
 |Persona|Tarea asignada |
 |-|--|
@@ -78,7 +78,7 @@ Segun vayamos iniciando el proyecto cada persona debe modificar este *README* y 
 |Alicia|-|
 |Adrian|-|
 
-### Como empezar
+## Como empezar
 
 1. Primero debes realizar un *clone* de esta práctica de forma local en tu equipo
 ```bash
